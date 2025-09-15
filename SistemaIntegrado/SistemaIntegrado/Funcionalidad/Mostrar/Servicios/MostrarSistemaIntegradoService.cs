@@ -1,12 +1,11 @@
 using System;
-using SistemaIntegrado.Clases;
 using SistemaIntegrado.Funcionalidad.Mostrar.Interfaces;
 
 namespace SistemaIntegrado.Funcionalidad.Mostrar.Servicios
 {
-    public class MostrarSistemaIntegradoService : IMostrar<SistemaIntegrado.Clases.SistemaIntegrado>
+    public class MostrarSistemaIntegradoService : IMostrar<SistemaIntegradoAlertas.Clases.Singleton.SistemaIntegrado>
     {
-        public string Mostrar(SistemaIntegrado.Clases.SistemaIntegrado entidad)
+        public string Mostrar(SistemaIntegradoAlertas.Clases.Singleton.SistemaIntegrado entidad)
         {
             if (entidad != null)
             {

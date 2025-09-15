@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using SistemaIntegrado.Clases;
-using SistemaIntegrado.Funcionalidad.Crear.Interfaces;
+using SistemaIntegradoAlertas.Funcionalidad.Crear.Factory;
 
 namespace SistemaIntegrado.Funcionalidad.Crear.Factory
 {

@@ -8,7 +8,7 @@ namespace SistemaIntegrado.Funcionalidad.Mostrar.Inyecciones
     {
         // Campos privados para las dependencias inyectadas
         private readonly IMostrar<CentroMedico> mostrarCentroMedico;
-        private readonly IMostrar<SistemaIntegrado.Clases.SistemaIntegrado> mostrarSistemaIntegrado;
+        private readonly IMostrar<SistemaIntegradoAlertas.Clases.Singleton.SistemaIntegrado> mostrarSistemaIntegrado;
         private readonly IMostrar<Cuenta> mostrarCuenta;
         private readonly IMostrar<Alerta> mostrarAlerta;
 
@@ -18,7 +18,7 @@ namespace SistemaIntegrado.Funcionalidad.Mostrar.Inyecciones
             get => mostrarCentroMedico;
         }
 
-        public IMostrar<SistemaIntegrado.Clases.SistemaIntegrado> MostrarSistemaIntegrado
+        public IMostrar<SistemaIntegradoAlertas.Clases.Singleton.SistemaIntegrado> MostrarSistemaIntegrado
         {
             get => mostrarSistemaIntegrado;
         }
@@ -37,7 +37,7 @@ namespace SistemaIntegrado.Funcionalidad.Mostrar.Inyecciones
         public MostradorAdmin(
             IMostrar<CentroMedico> mostrarCentroMedico,
             IMostrar<Cuenta> mostrarCuenta,
-            IMostrar<SistemaIntegrado.Clases.SistemaIntegrado> mostrarSistemaIntegrado,
+            IMostrar<SistemaIntegradoAlertas.Clases.Singleton.SistemaIntegrado> mostrarSistemaIntegrado,
             IMostrar<Alerta> mostrarAlerta)
         {
             this.mostrarCentroMedico = mostrarCentroMedico ?? throw new ArgumentNullException(nameof(mostrarCentroMedico));

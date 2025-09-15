@@ -12,10 +12,7 @@
     <Folder Include="Funcionalidad\Actualizar\Interfaces\" />
     <Folder Include="Funcionalidad\Actualizar\Servicios\" />
     <Folder Include="Funcionalidad\Actualizar\Inyecciones\" />
-    <Folder Include="Funcionalidad\Crear\" />
-    <Folder Include="Funcionalidad\Crear\Interfaces\" />
     <Folder Include="Funcionalidad\Crear\Servicios\" />
-    <Folder Include="Funcionalidad\Crear\Factory\" />
     <Folder Include="Funcionalidad\Eliminar\" />
     <Folder Include="Funcionalidad\Eliminar\Interfaces\" />
     <Folder Include="Funcionalidad\Eliminar\Servicios\" />
@@ -23,13 +20,8 @@
     <Folder Include="Funcionalidad\Mostrar\Interfaces\" />
     <Folder Include="Funcionalidad\Mostrar\Servicios\" />
     <Folder Include="Main\" />
-    <Folder Include="Funcionalidad\Asignar\" />
     <Folder Include="Funcionalidad\Asignar\Interfaces\" />
-    <Folder Include="Funcionalidad\Asignar\Servicios\" />
     <Folder Include="Funcionalidad\Asignar\Inyecciones\" />
-    <Folder Include="Funcionalidad\Autenticacion\" />
-    <Folder Include="Funcionalidad\Comunicacion\" />
-    <Folder Include="Funcionalidad\Comunicacion\Interfaces\" />
     <Folder Include="Funcionalidad\Comunicacion\Servicios\" />
     <Folder Include="Funcionalidad\Comunicacion\Inyecciones\" />
     <Folder Include="Funcionalidad\Geolocalizacion\" />
