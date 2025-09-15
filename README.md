@@ -2,7 +2,7 @@
 
 ## SINGLETON
 **Clase:** SistemaIntegrado
-**Atributos:** instancia, nombre, telefono, l_cuentas, l_centroMedico
+**Atributos:** SistemaIntegrado? instancia, string nombre, int telefono, List<Cuenta> l_cuentas, List<CentroMedico> l_centroMedico
 **Métodos:** 
 - GetInstance() ? SistemaIntegrado
 
@@ -41,14 +41,14 @@
 
 **Servicios:**
 - MostrarDecorator<T>:
-  - **Atributos:** mostrarComponente
+  - **Atributos:** IMostrar<T> mostrarComponente
   - **Métodos:** Mostrar(T entidad) ? string
 - FormatoJsonDecorator<T>:
   - **Métodos:** Mostrar(T entidad) ? string
 - FormatoXmlDecorator<T>:
   - **Métodos:** Mostrar(T entidad) ? string
 - EncabezadoDecorator<T>:
-  - **Atributos:** titulo, usuario
+  - **Atributos:** string titulo, string usuario
   - **Métodos:** Mostrar(T entidad) ? string
 - EmergenciaDecorator<T>:
   - **Métodos:** Mostrar(T entidad) ? string
@@ -56,24 +56,24 @@
 ## MEMENTO
 **Interfaces:**
 - IMemento:
-  - **Propiedades:** FechaCreacion, UsuarioResponsable
+  - **Propiedades:** DateTime FechaCreacion, string UsuarioResponsable
   - **Métodos:** ObtenerDescripcion() ? string
 - IActualizar<T, TCambio>:
   - **Métodos:** Actualizar(T entidad, TCambio cambio) ? void
 
 **Servicios:**
 - AlertaMemento:
-  - **Atributos:** tipoAlerta, reportante, estado, nivelTriaje, fechaCreacion, fechaFinalizacion, equipoAsignado, rutas, FechaCreacion, UsuarioResponsable
+  - **Atributos:** string tipoAlerta, Perfil reportante, bool estado, uint nivelTriaje, DateTime fechaCreacion, DateTime fechaFinalizacion, Perfil? equipoAsignado, List<Ruta> rutas, DateTime FechaCreacion, string UsuarioResponsable
   - **Métodos:** 
     - RestaurarEstado(Alerta alerta) ? void
     - ObtenerDescripcion() ? string
 - CentroMedicoMemento:
-  - **Atributos:** nombre, telefono, complejidad, latitud, longitud, FechaCreacion, UsuarioResponsable
+  - **Atributos:** string nombre, int telefono, string complejidad, float latitud, float longitud, DateTime FechaCreacion, string UsuarioResponsable
   - **Métodos:**
     - RestaurarEstado(CentroMedico centro) ? void
     - ObtenerDescripcion() ? string
 - HistorialActualizaciones:
-  - **Atributos:** historialPorEntidad, historialGlobal, limiteHistorial
+  - **Atributos:** Dictionary<object, Stack<IMemento>> historialPorEntidad, List<IMemento> historialGlobal, int limiteHistorial
   - **Métodos:**
     - GuardarEstado(object entidad, IMemento memento) ? void
     - DeshacerUltimoCambio(object entidad) ? IMemento?
@@ -81,13 +81,13 @@
     - ObtenerHistorialCompleto() ? List<IMemento>
     - LimpiarHistorial() ? void
 - ActualizarConMemento<T, TCambio>:
-  - **Atributos:** actualizadorBase, historial, usuarioActual
+  - **Atributos:** IActualizar<T, TCambio> actualizadorBase, HistorialActualizaciones historial, string usuarioActual
   - **Métodos:**
     - Actualizar(T entidad, TCambio cambio) ? void
     - DeshacerUltimoCambio(T entidad) ? bool
     - PuedeDeshacer(T entidad) ? bool
 - ActualizarSeguroService<T, TCambio>:
-  - **Atributos:** actualizadorConMemento, usuarioActual
+  - **Atributos:** ActualizarConMemento<T, TCambio> actualizadorConMemento, Perfil? usuarioActual
   - **Métodos:**
     - Actualizar(T entidad, TCambio cambio) ? void
     - ActualizarConResultado(T entidad, TCambio cambio) ? ResultadoActualizacion<T>
