@@ -12,7 +12,7 @@
     <Folder Include="Funcionalidad\Actualizar\Interfaces\" />
     <Folder Include="Funcionalidad\Actualizar\Servicios\" />
     <Folder Include="Funcionalidad\Actualizar\Inyecciones\" />
-    <Folder Include="Funcionalidad\Actualizar\ChainOfResponsibility\" />
+    <Folder Include="Funcionalidad\Actualizar\Memento\" />
     <Folder Include="Funcionalidad\Crear\" />
     <Folder Include="Funcionalidad\Crear\Interfaces\" />
     <Folder Include="Funcionalidad\Crear\Servicios\" />
@@ -33,7 +33,6 @@
     <Folder Include="Funcionalidad\Asignar\Interfaces\" />
     <Folder Include="Funcionalidad\Asignar\Servicios\" />
     <Folder Include="Funcionalidad\Asignar\Inyecciones\" />
-    <Folder Include="Funcionalidad\Asignar\Strategy\" />
     <Folder Include="Funcionalidad\Autenticacion\" />
     <Folder Include="Funcionalidad\Comunicacion\" />
     <Folder Include="Funcionalidad\Comunicacion\Interfaces\" />

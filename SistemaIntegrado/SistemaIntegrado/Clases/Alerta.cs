@@ -13,7 +13,7 @@ namespace SistemaIntegrado.Clases
         private uint nivel_triaje;
         private DateTime fecha_creacion;
         private DateTime fecha_finalizacion;
-        private Perfil equipo_asignado;
+        private Perfil? equipo_asignado;  // Permitir null
         private List<Ruta> rutas;
 
         // Propiedades con accesores lambda
@@ -53,7 +53,7 @@ namespace SistemaIntegrado.Clases
             set => fecha_finalizacion = value;
         }
 
-        public Perfil Equipo_asignado
+        public Perfil? Equipo_asignado  // Permitir null
         {
             get => equipo_asignado;
             set => equipo_asignado = value;
@@ -73,6 +73,7 @@ namespace SistemaIntegrado.Clases
             this.tipoAlerta = tipoAlerta;
             this.rutas = new List<Ruta>();
             this.estado = true;
+            this.equipo_asignado = null; // Inicializar explícitamente
         }
     }
 }

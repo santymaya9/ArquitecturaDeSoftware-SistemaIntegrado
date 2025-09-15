@@ -12,7 +12,6 @@
     <Folder Include="Funcionalidad\Actualizar\Servicios\" />
     <Folder Include="Funcionalidad\Actualizar\Inyecciones\" />
     <Folder Include="Funcionalidad\Crear\Servicios\" />
-    <Folder Include="Funcionalidad\Eliminar\" />
     <Folder Include="Funcionalidad\Eliminar\Interfaces\" />
     <Folder Include="Funcionalidad\Eliminar\Servicios\" />
     <Folder Include="Funcionalidad\Eliminar\Inyecciones\" />
