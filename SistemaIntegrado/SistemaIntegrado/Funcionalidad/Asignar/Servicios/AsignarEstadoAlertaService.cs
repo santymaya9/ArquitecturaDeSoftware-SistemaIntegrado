@@ -2,7 +2,7 @@ using System;
 using SistemaIntegrado.Clases;
 using SistemaIntegrado.Servicios.Asignar.Interfaces;
 
-namespace SistemaIntegrado.Servicios.Asignar.Servicios
+namespace SistemaIntegrado.Funcionalidad.Asignar.Servicios
 {
     public class AsignarEstadoAlertaService : IAsignar<Alerta, string>
     {
@@ -10,7 +10,8 @@ namespace SistemaIntegrado.Servicios.Asignar.Servicios
         {
             if (alerta != null && !string.IsNullOrWhiteSpace(estado))
             {
-                alerta.Estado = estado;
+                // Convertir string a bool
+                alerta.Estado = estado.ToLower() == "activo" || estado.ToLower() == "true" || estado == "1";
             }
         }
     }
