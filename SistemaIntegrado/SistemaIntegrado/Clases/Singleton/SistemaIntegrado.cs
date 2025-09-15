@@ -1,6 +1,7 @@
+using SistemaIntegrado.Clases;
 using System;
 
-namespace SistemaIntegrado.Clases
+namespace SistemaIntegradoAlertas.Clases.Singleton
 {
     public class SistemaIntegrado
     {
