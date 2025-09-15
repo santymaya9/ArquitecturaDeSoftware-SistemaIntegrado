@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Funcionalidad\Actualizar\" />
+    <Folder Include="Funcionalidad\Actualizar\Interfaces\" />
+    <Folder Include="Funcionalidad\Actualizar\Servicios\" />
+    <Folder Include="Funcionalidad\Actualizar\Inyecciones\" />
+    <Folder Include="Funcionalidad\Crear\" />
+    <Folder Include="Funcionalidad\Crear\Interfaces\" />
+    <Folder Include="Funcionalidad\Crear\Servicios\" />
     <Folder Include="Main\" />
     <Folder Include="Funcionalidad\" />
     <Folder Include="Funcionalidad\Asignar\" />
