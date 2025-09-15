@@ -1,0 +1,39 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class Cuenta
+    {
+        // Campos privados
+        private string perfil;
+        private TimeSpan fecha_creacion;
+        private bool estado_cuenta;
+
+        // Propiedades con accesores lambda
+        public string Perfil
+        {
+            get => perfil;
+            set => perfil = value;
+        }
+
+        public TimeSpan Fecha_creacion
+        {
+            get => fecha_creacion;
+            set => fecha_creacion = value;
+        }
+
+        public bool Estado_cuenta
+        {
+            get => estado_cuenta;
+            set => estado_cuenta = value;
+        }
+
+        // Constructor según el diagrama
+        public Cuenta(string perfil, TimeSpan fecha_creacion, bool estado_cuenta)
+        {
+            this.perfil = perfil;
+            this.fecha_creacion = fecha_creacion;
+            this.estado_cuenta = estado_cuenta;
+        }
+    }
+}

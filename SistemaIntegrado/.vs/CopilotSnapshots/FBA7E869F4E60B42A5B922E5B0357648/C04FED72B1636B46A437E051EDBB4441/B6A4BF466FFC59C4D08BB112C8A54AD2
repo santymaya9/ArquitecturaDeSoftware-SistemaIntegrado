@@ -1,0 +1,58 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class SistemaIntegrado
+    {
+        // Campos privados
+        private string nombre;
+        private uint telefono;
+        private Cuenta[] cuentas;
+        private CentroMedico[] centroMedico;
+        private static SistemaIntegrado instance;
+
+        // Propiedades con accesores lambda
+        public string Nombre
+        {
+            get => nombre;
+            set => nombre = value;
+        }
+
+        public uint Telefono
+        {
+            get => telefono;
+            set => telefono = value;
+        }
+
+        public Cuenta[] Cuentas
+        {
+            get => cuentas;
+            set => cuentas = value;
+        }
+
+        public CentroMedico[] CentroMedico
+        {
+            get => centroMedico;
+            set => centroMedico = value;
+        }
+
+        // Constructor según el diagrama
+        public SistemaIntegrado(string nombre, uint telefono, Cuenta[] cuentas, CentroMedico[] centroMedico)
+        {
+            this.nombre = nombre;
+            this.telefono = telefono;
+            this.cuentas = cuentas;
+            this.centroMedico = centroMedico;
+        }
+
+        // Método getInstance (singleton)
+        public static SistemaIntegrado GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new SistemaIntegrado("", 0, null, null);
+            }
+            return instance;
+        }
+    }
+}

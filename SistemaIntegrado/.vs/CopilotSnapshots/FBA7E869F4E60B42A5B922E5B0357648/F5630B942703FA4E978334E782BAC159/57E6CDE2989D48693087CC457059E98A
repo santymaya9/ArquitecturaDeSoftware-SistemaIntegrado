@@ -1,0 +1,37 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class Paciente
+    {
+        // Campos privados
+        private Historia_clinica historia_clinica;
+        private string latitud;
+        private string longitud;
+
+        // Propiedades con accesores lambda
+        public Historia_clinica Historia_clinica
+        {
+            get => historia_clinica;
+            set => historia_clinica = value;
+        }
+
+        public string Latitud
+        {
+            get => latitud;
+            set => latitud = value;
+        }
+
+        public string Longitud
+        {
+            get => longitud;
+            set => longitud = value;
+        }
+
+        // Constructor según el diagrama
+        public Paciente(Historia_clinica historia_clinica)
+        {
+            this.historia_clinica = historia_clinica;
+        }
+    }
+}

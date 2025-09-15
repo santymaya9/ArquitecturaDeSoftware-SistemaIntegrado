@@ -1,0 +1,31 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class Paramedico : Perfil
+    {
+        // Campos privados
+        private int num_paramedico;
+        private int limite_alertas;
+
+        // Propiedades con accesores lambda
+        public int Num_paramedico
+        {
+            get => num_paramedico;
+            set => num_paramedico = value;
+        }
+
+        public int Limite_alertas
+        {
+            get => limite_alertas;
+            set => limite_alertas = value;
+        }
+
+        // Constructor según el diagrama
+        public Paramedico(int num_paramedico, int limite_alertas) : base("", "", "", 0, 0, "")
+        {
+            this.num_paramedico = num_paramedico;
+            this.limite_alertas = limite_alertas;
+        }
+    }
+}

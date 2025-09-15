@@ -1,0 +1,14 @@
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.AssemblyInfoInputs.cache
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.AssemblyInfo.cs
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.csproj.CoreCompileInputs.cache
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\bin\Debug\net8.0\SistemaIntegrado.exe
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\bin\Debug\net8.0\SistemaIntegrado.deps.json
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\bin\Debug\net8.0\SistemaIntegrado.runtimeconfig.json
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\bin\Debug\net8.0\SistemaIntegrado.dll
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\bin\Debug\net8.0\SistemaIntegrado.pdb
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.dll
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\refint\SistemaIntegrado.dll
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.pdb
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.genruntimeconfig.cache
+C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\ref\SistemaIntegrado.dll

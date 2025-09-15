@@ -1,0 +1,55 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class CentroMedico
+    {
+        // Campos privados
+        private string nombre;
+        private uint telefono;
+        private uint complejidad;
+        private float latitud;
+        private float longitud;
+
+        // Propiedades con accesores lambda
+        public string Nombre
+        {
+            get => nombre;
+            set => nombre = value;
+        }
+
+        public uint Telefono
+        {
+            get => telefono;
+            set => telefono = value;
+        }
+
+        public uint Complejidad
+        {
+            get => complejidad;
+            set => complejidad = value;
+        }
+
+        public float Latitud
+        {
+            get => latitud;
+            set => latitud = value;
+        }
+
+        public float Longitud
+        {
+            get => longitud;
+            set => longitud = value;
+        }
+
+        // Constructor según el diagrama
+        public CentroMedico(string nombre, uint complejidad, uint telefono, float latitud, float longitud)
+        {
+            this.nombre = nombre;
+            this.complejidad = complejidad;
+            this.telefono = telefono;
+            this.latitud = latitud;
+            this.longitud = longitud;
+        }
+    }
+}

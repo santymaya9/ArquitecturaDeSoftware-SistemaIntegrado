@@ -1,0 +1,63 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class Perfil
+    {
+        // Campos privados
+        private string nombre;
+        private string correo;
+        private string tipo_cedula;
+        private uint cedula;
+        private uint celular;
+        private string contraseña;
+
+        // Propiedades con accesores lambda
+        public string Nombre
+        {
+            get => nombre;
+            set => nombre = value;
+        }
+
+        public string Correo
+        {
+            get => correo;
+            set => correo = value;
+        }
+
+        public string Tipo_cedula
+        {
+            get => tipo_cedula;
+            set => tipo_cedula = value;
+        }
+
+        public uint Cedula
+        {
+            get => cedula;
+            set => cedula = value;
+        }
+
+        public uint Celular
+        {
+            get => celular;
+            set => celular = value;
+        }
+
+        public string Contraseña
+        {
+            get => contraseña;
+            set => contraseña = value;
+        }
+
+        // Constructor según el diagrama
+        public Perfil(string nombre, string correo, string tipo_documento, uint cedula, uint celular, string contraseña)
+        {
+            this.nombre = nombre;
+            this.correo = correo;
+            this.tipo_cedula = tipo_documento;
+            this.cedula = cedula;
+            this.celular = celular;
+            this.contraseña = contraseña;
+        }
+    }
+}

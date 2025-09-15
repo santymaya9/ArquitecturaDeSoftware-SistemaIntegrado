@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+
+namespace SistemaIntegrado.Clases
+{
+    public class Admin : Perfil
+    {
+        private List<Alerta> l_alertas;
+        private int num_admin;
+
+        public List<Alerta> L_alertas
+        {
+            get => l_alertas;
+            set => l_alertas = value;
+        }
+
+        public int Num_admin
+        {
+            get => num_admin;
+            set => num_admin = value;
+        }
+
+        public Admin(string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, int num_admin, List<Alerta> l_alertas = null)
+            : base(nombre, correo, celular, tipo_cedula, cedula, contrasena)
+        {
+            this.num_admin = num_admin;
+            this.l_alertas = l_alertas ?? new List<Alerta>();
+        }
+    }
+
+}
+

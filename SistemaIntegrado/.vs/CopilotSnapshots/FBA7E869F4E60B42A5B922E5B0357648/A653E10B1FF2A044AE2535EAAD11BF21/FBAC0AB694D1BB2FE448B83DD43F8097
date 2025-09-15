@@ -1,0 +1,39 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class Ruta
+    {
+        // Campos privados
+        private int num_nodo;
+        private float latitud;
+        private float longitud;
+
+        // Propiedades con accesores lambda
+        public int Num_nodo
+        {
+            get => num_nodo;
+            set => num_nodo = value;
+        }
+
+        public float Latitud
+        {
+            get => latitud;
+            set => latitud = value;
+        }
+
+        public float Longitud
+        {
+            get => longitud;
+            set => longitud = value;
+        }
+
+        // Constructor según el diagrama
+        public Ruta(int num_nodo, float latitud, float longitud)
+        {
+            this.num_nodo = num_nodo;
+            this.latitud = latitud;
+            this.longitud = longitud;
+        }
+    }
+}

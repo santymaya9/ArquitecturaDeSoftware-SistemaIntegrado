@@ -1,0 +1,55 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class Historia_clinica
+    {
+        // Campos privados
+        private uint edad;
+        private string tipo_sangre;
+        private bool marcapasos;
+        private string[] enfermedades_preexistentes;
+        private string municipio;
+
+        // Propiedades con accesores lambda
+        public uint Edad
+        {
+            get => edad;
+            set => edad = value;
+        }
+
+        public string Tipo_sangre
+        {
+            get => tipo_sangre;
+            set => tipo_sangre = value;
+        }
+
+        public bool Marcapasos
+        {
+            get => marcapasos;
+            set => marcapasos = value;
+        }
+
+        public string[] Enfermedades_preexistentes
+        {
+            get => enfermedades_preexistentes;
+            set => enfermedades_preexistentes = value;
+        }
+
+        public string Municipio
+        {
+            get => municipio;
+            set => municipio = value;
+        }
+
+        // Constructor según el diagrama
+        public Historia_clinica(uint edad, string tipo_sangre, bool marcapasos, string[] enfermedades_preexistentes, string municipio)
+        {
+            this.edad = edad;
+            this.tipo_sangre = tipo_sangre;
+            this.marcapasos = marcapasos;
+            this.enfermedades_preexistentes = enfermedades_preexistentes;
+            this.municipio = municipio;
+        }
+    }
+}

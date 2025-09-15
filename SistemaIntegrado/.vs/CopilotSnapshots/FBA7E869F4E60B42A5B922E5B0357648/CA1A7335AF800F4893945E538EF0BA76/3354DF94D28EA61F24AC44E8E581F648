@@ -1,0 +1,23 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class Operador : Perfil
+    {
+        // Campos privados
+        private int num_operador;
+
+        // Propiedades con accesores lambda
+        public int Num_operador
+        {
+            get => num_operador;
+            set => num_operador = value;
+        }
+
+        // Constructor según el diagrama
+        public Operador(int num_operador) : base("", "", "", 0, 0, "")
+        {
+            this.num_operador = num_operador;
+        }
+    }
+}

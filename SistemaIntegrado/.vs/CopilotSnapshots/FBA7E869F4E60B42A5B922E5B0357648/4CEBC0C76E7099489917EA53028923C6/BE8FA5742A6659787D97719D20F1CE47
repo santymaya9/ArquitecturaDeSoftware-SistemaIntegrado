@@ -1,0 +1,18 @@
+﻿using System;
+
+namespace SistemaIntegrado
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("¡Hola! Sistema Integrado iniciado.");
+            Console.WriteLine("Estructura de carpetas creada:");
+            Console.WriteLine("- Clases");
+            Console.WriteLine("- Interfaces");  
+            Console.WriteLine("- Servicio");
+            Console.WriteLine("- Main");
+            Console.ReadKey();
+        }
+    }
+}

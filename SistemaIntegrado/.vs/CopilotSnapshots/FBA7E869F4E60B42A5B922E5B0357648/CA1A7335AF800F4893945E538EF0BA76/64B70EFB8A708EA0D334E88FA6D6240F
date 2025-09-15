@@ -1,0 +1,23 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class Admin : Perfil
+    {
+        // Campos privados
+        private int num_admin;
+
+        // Propiedades con accesores lambda
+        public int Num_admin
+        {
+            get => num_admin;
+            set => num_admin = value;
+        }
+
+        // Constructor según el diagrama
+        public Admin() : base("", "", "", 0, 0, "")
+        {
+            this.num_admin = 0;
+        }
+    }
+}

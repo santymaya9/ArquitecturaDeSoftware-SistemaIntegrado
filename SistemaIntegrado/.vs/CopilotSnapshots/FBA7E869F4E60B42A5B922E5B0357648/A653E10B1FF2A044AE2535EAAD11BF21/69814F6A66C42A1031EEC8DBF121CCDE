@@ -1,0 +1,66 @@
+﻿using System;
+
+namespace SistemaIntegrado.Clases
+{
+    public class Alerta
+    {
+        // Campos privados
+        private Perfil reportante;
+        private string estado;
+        private uint nivel_triaje;
+        private DateTime fecha_creacion;
+        private DateTime fecha_finalizacion;
+        private Perfil equipo_asignado;
+        private Ruta[] rutas;
+
+        // Propiedades con accesores lambda
+        public Perfil Reportante
+        {
+            get => reportante;
+            set => reportante = value;
+        }
+
+        public string Estado
+        {
+            get => estado;
+            set => estado = value;
+        }
+
+        public uint Nivel_triaje
+        {
+            get => nivel_triaje;
+            set => nivel_triaje = value;
+        }
+
+        public DateTime Fecha_creacion
+        {
+            get => fecha_creacion;
+            set => fecha_creacion = value;
+        }
+
+        public DateTime Fecha_finalizacion
+        {
+            get => fecha_finalizacion;
+            set => fecha_finalizacion = value;
+        }
+
+        public Perfil Equipo_asignado
+        {
+            get => equipo_asignado;
+            set => equipo_asignado = value;
+        }
+
+        public Ruta[] Rutas
+        {
+            get => rutas;
+            set => rutas = value;
+        }
+
+        // Constructor según el diagrama
+        public Alerta(Perfil reportante, DateTime fecha_creacion)
+        {
+            this.reportante = reportante;
+            this.fecha_creacion = fecha_creacion;
+        }
+    }
+}

@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\sistemaintegrado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\sistemaintegrado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\ruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\ruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\operador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\operador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\historia_clinica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\historia_clinica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\ciudadano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\ciudadano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\alerta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\alerta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\centromedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\centromedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\cuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\cuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|c:\\users\\santy\\source\\repos\\sistemaintegrado\\sistemaintegrado\\clases\\paramedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7E376ED-EF3C-4C30-8B90-435FAFFE0E0D}|SistemaIntegrado\\SistemaIntegrado.csproj|solutionrelative:sistemaintegrado\\clases\\paramedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ciudadano.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Ciudadano.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\Ciudadano.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Ciudadano.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\Ciudadano.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T00:29:03.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SistemaIntegrado.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\SistemaIntegrado.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\SistemaIntegrado.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\SistemaIntegrado.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\SistemaIntegrado.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwD8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T00:26:19.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Alerta.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Alerta.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\Alerta.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Alerta.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\Alerta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T00:25:39.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ruta.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Ruta.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\Ruta.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Ruta.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\Ruta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T00:25:28.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Historia_Clinica.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Historia_Clinica.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\Historia_Clinica.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Historia_Clinica.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\Historia_Clinica.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T00:23:42.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Admin.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\Admin.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Admin.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T00:21:53.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Operador.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Operador.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\Operador.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Operador.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\Operador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T00:21:46.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Paramedico.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Paramedico.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\Paramedico.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Paramedico.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\Paramedico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T00:21:37.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Perfil.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Perfil.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\Perfil.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Perfil.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\Perfil.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T00:19:42.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Cuenta.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Cuenta.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\Cuenta.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\Cuenta.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\Cuenta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T00:17:35.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CentroMedico.cs",
+              "DocumentMoniker": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\CentroMedico.cs",
+              "RelativeDocumentMoniker": "SistemaIntegrado\\Clases\\CentroMedico.cs",
+              "ToolTip": "C:\\Users\\santy\\source\\repos\\SistemaIntegrado\\SistemaIntegrado\\Clases\\CentroMedico.cs",
+              "RelativeToolTip": "SistemaIntegrado\\Clases\\CentroMedico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T23:53:58.241Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
