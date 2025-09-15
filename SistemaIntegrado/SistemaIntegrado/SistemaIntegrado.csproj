@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -15,6 +15,15 @@
     <Folder Include="Funcionalidad\Crear\" />
     <Folder Include="Funcionalidad\Crear\Interfaces\" />
     <Folder Include="Funcionalidad\Crear\Servicios\" />
+    <Folder Include="Funcionalidad\Crear\Factory\" />
+    <Folder Include="Funcionalidad\Eliminar\" />
+    <Folder Include="Funcionalidad\Eliminar\Interfaces\" />
+    <Folder Include="Funcionalidad\Eliminar\Servicios\" />
+    <Folder Include="Funcionalidad\Eliminar\Inyecciones\" />
+    <Folder Include="Funcionalidad\Mostrar\" />
+    <Folder Include="Funcionalidad\Mostrar\Interfaces\" />
+    <Folder Include="Funcionalidad\Mostrar\Servicios\" />
+    <Folder Include="Funcionalidad\Mostrar\Inyecciones\" />
     <Folder Include="Main\" />
     <Folder Include="Funcionalidad\" />
     <Folder Include="Funcionalidad\Asignar\" />

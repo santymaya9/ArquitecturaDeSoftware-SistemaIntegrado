@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\santy\\Downloads\\ArquitecturaDeSoftware-SistemaIntegrado\\SistemaIntegrado\\SistemaIntegrado\\SistemaIntegrado.csproj",
-      "projectName": "SistemaIntegrado",
-      "projectPath": "C:\\Users\\santy\\Downloads\\ArquitecturaDeSoftware-SistemaIntegrado\\SistemaIntegrado\\SistemaIntegrado\\SistemaIntegrado.csproj",
+      "projectUniqueName": "C:\\Users\\santy\\Downloads\\ArquitecturaDeSoftware-SistemaIntegrado\\SistemaIntegrado\\SistemaIntegrado\\SistemaIntegradoAlertas.csproj",
+      "projectName": "SistemaIntegradoAlertas",
+      "projectPath": "C:\\Users\\santy\\Downloads\\ArquitecturaDeSoftware-SistemaIntegrado\\SistemaIntegrado\\SistemaIntegrado\\SistemaIntegradoAlertas.csproj",
       "packagesPath": "C:\\Users\\santy\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\santy\\Downloads\\ArquitecturaDeSoftware-SistemaIntegrado\\SistemaIntegrado\\SistemaIntegrado\\obj\\",
       "projectStyle": "PackageReference",
