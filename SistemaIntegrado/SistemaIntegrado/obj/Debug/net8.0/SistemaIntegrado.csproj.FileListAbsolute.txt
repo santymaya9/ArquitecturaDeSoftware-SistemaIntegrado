@@ -12,3 +12,11 @@ C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\r
 C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.pdb
 C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.genruntimeconfig.cache
 C:\Users\santy\source\repos\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\ref\SistemaIntegrado.dll
+C:\Users\santy\Downloads\ArquitecturaDeSoftware-SistemaIntegrado\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\santy\Downloads\ArquitecturaDeSoftware-SistemaIntegrado\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.AssemblyInfoInputs.cache
+C:\Users\santy\Downloads\ArquitecturaDeSoftware-SistemaIntegrado\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.AssemblyInfo.cs
+C:\Users\santy\Downloads\ArquitecturaDeSoftware-SistemaIntegrado\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.csproj.CoreCompileInputs.cache
+C:\Users\santy\Downloads\ArquitecturaDeSoftware-SistemaIntegrado\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.sourcelink.json
+C:\Users\santy\Downloads\ArquitecturaDeSoftware-SistemaIntegrado\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.dll
+C:\Users\santy\Downloads\ArquitecturaDeSoftware-SistemaIntegrado\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\refint\SistemaIntegrado.dll
+C:\Users\santy\Downloads\ArquitecturaDeSoftware-SistemaIntegrado\SistemaIntegrado\SistemaIntegrado\obj\Debug\net8.0\SistemaIntegrado.pdb

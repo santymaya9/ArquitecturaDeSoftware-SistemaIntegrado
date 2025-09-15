@@ -1,70 +1,78 @@
 using System;
+using System.Collections.Generic;
+using SistemaIntegrado.Clases;
 
 namespace SistemaIntegrado.Clases
 {
     public class Alerta
     {
-        private string estado;
-        private Ciudadano paciente;
-        private float latitud;
-        private float longitud;
-        private DateTime fecha;
+        // Campos privados
+        private string tipoAlerta;
+        private Perfil reportante;
+        private bool estado;
+        private uint nivel_triaje;
+        private DateTime fecha_creacion;
         private DateTime fecha_finalizacion;
-        private Ruta rutas;
-        private Paramedico paramedicoAsignado;
+        private Perfil equipo_asignado;
+        private List<Ruta> rutas;
 
-        public string Estado
+        // Propiedades con accesores lambda
+        public string TipoAlerta
         {
-            get => string.IsNullOrWhiteSpace(estado) ? "Sin estado" : estado;
+            get => tipoAlerta;
+            set => tipoAlerta = value;
+        }
+
+        public Perfil Reportante
+        {
+            get => reportante;
+            set => reportante = value;
+        }
+
+        public bool Estado
+        {
+            get => estado;
             set => estado = value;
         }
-        public Ciudadano Paciente
+
+        public uint Nivel_triaje
         {
-            get => paciente;
-            set => paciente = value;
+            get => nivel_triaje;
+            set => nivel_triaje = value;
         }
-        public float Latitud
+
+        public DateTime Fecha_creacion
         {
-            get => latitud;
-            set => latitud = value;
+            get => fecha_creacion;
+            set => fecha_creacion = value;
         }
-        public float Longitud
+
+        public DateTime Fecha_finalizacion
         {
-            get => longitud;
-            set => longitud = value;
-        }
-        public DateTime Fecha
-        {
-            get => fecha == default ? DateTime.MinValue : fecha;
-            set => fecha = value;
-        }
-        public DateTime FechaFinalizacion
-        {
-            get => fecha_finalizacion == default ? DateTime.MinValue : fecha_finalizacion;
+            get => fecha_finalizacion;
             set => fecha_finalizacion = value;
         }
-        public Ruta Rutas
+
+        public Perfil Equipo_asignado
+        {
+            get => equipo_asignado;
+            set => equipo_asignado = value;
+        }
+
+        public List<Ruta> Rutas
         {
             get => rutas;
             set => rutas = value;
         }
-        public Paramedico ParamedicoAsignado
-        {
-            get => paramedicoAsignado;
-            set => paramedicoAsignado = value;
-        }
 
-        public Alerta(string estado, Ciudadano paciente, float latitud, float longitud, DateTime fecha, DateTime fecha_finalizacion, Ruta rutas, Paramedico paramedicoAsignado)
+        // Constructor según el diagrama
+        public Alerta(Perfil reportante, DateTime fecha_creacion, string tipoAlerta)
         {
-            this.estado = estado;
-            this.paciente = paciente;
-            this.latitud = latitud;
-            this.longitud = longitud;
-            this.fecha = fecha;
-            this.fecha_finalizacion = fecha_finalizacion;
-            this.rutas = rutas;
-            this.paramedicoAsignado = paramedicoAsignado;
+            this.reportante = reportante;
+            this.fecha_creacion = fecha_creacion;
+            this.tipoAlerta = tipoAlerta;
+            this.rutas = new List<Ruta>();
+            this.estado = true;
         }
     }
-
 }
