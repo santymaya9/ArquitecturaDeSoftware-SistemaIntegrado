@@ -25,6 +25,7 @@
     <Folder Include="Funcionalidad\Mostrar\Interfaces\" />
     <Folder Include="Funcionalidad\Mostrar\Servicios\" />
     <Folder Include="Funcionalidad\Mostrar\Inyecciones\" />
+    <Folder Include="Funcionalidad\Mostrar\Decorator\" />
     <Folder Include="Main\" />
     <Folder Include="Funcionalidad\" />
     <Folder Include="Funcionalidad\Asignar\" />

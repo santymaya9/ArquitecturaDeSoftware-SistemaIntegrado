@@ -9,7 +9,7 @@ namespace SistemaIntegrado.Funcionalidad.Crear.Observer
         {
             if (elemento != null)
             {
-                return $"🚨 NUEVA ALERTA CREADA: {elemento.TipoAlerta} - Reportante: {elemento.Reportante?.Nombre} - Fecha: {elemento.Fecha_creacion:HH:mm:ss}";
+                return $"NUEVA ALERTA CREADA: {elemento.TipoAlerta} - Reportante: {elemento.Reportante?.Nombre} - Fecha: {elemento.Fecha_creacion:HH:mm:ss}";
             }
             return "Error: No se pudo crear la alerta";
         }

@@ -7,7 +7,7 @@ namespace SistemaIntegrado.Funcionalidad.Comunicacion.Observer
     {
         public string OnNotificacionEnviada(string mensaje, Perfil destinatario)
         {
-            return $"📝 LOG: Comunicación enviada a {destinatario?.Nombre} - Mensaje: {mensaje} - Fecha: {DateTime.Now:HH:mm:ss}";
+            return $"LOG: Comunicación enviada a {destinatario?.Nombre} - Mensaje: {mensaje} - Fecha: {DateTime.Now:HH:mm:ss}";
         }
     }
 }
