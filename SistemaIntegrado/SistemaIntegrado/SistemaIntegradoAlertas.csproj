@@ -17,7 +17,6 @@
     <Folder Include="Funcionalidad\Eliminar\Inyecciones\" />
     <Folder Include="Funcionalidad\Mostrar\Interfaces\" />
     <Folder Include="Funcionalidad\Mostrar\Servicios\" />
-    <Folder Include="Main\" />
     <Folder Include="Funcionalidad\Asignar\Interfaces\" />
     <Folder Include="Funcionalidad\Asignar\Inyecciones\" />
     <Folder Include="Funcionalidad\Comunicacion\Servicios\" />

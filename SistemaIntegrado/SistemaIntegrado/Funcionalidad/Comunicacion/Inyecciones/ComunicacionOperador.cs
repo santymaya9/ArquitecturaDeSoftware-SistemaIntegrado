@@ -1,24 +1,30 @@
 using System;
 using SistemaIntegrado.Clases;
 using SistemaIntegrado.Funcionalidad.Comunicacion.Interfaces;
+using SistemaIntegrado.Funcionalidad.Comunicacion.Decorator;
+using SistemaIntegrado.Funcionalidad.Comunicacion.Implementaciones;
 
 namespace SistemaIntegrado.Funcionalidad.Comunicacion.Inyecciones
 {
     public class ComunicacionOperador
     {
-        // Campo privado para la dependencia inyectada
-        private readonly IComunicacion<int> comunicacion;
+        // Cambio para usar Perfil en lugar de Alerta
+        private readonly IComunicacion<Perfil> comunicacion;
 
         // Propiedad con accesor lambda
-        public IComunicacion<int> Comunicacion
-        {
-            get => comunicacion;
-        }
+        public IComunicacion<Perfil> Comunicacion => comunicacion;
 
         // Constructor para inyección de dependencias
-        public ComunicacionOperador(IComunicacion<int> comunicacion)
+        public ComunicacionOperador(IComunicacion<Perfil> comunicacionBase)
         {
-            this.comunicacion = comunicacion ?? throw new ArgumentNullException(nameof(comunicacion));
+            if (comunicacionBase == null)
+                throw new ArgumentNullException(nameof(comunicacionBase));
+
+            // Decoramos la comunicación base con los medios preferidos para operadores
+            // Operadores: preferencia por comunicaciones detalladas (email, llamada)
+            this.comunicacion = new EmailDecorator(
+                                  new LlamadaDecorator(comunicacionBase),
+                                  "ALERTA OPERACIONAL: Acción requerida");
         }
     }
 }
