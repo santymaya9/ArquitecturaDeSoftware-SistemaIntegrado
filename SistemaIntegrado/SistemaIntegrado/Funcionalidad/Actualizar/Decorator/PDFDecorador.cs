@@ -12,27 +12,49 @@ namespace SistemaIntegrado.Funcionalidad.Actualizar.Decorator
         public string Directorio => directorio;
         public string NombreArchivo => nombreArchivo;
         public string RutaCompleta => Path.Combine(directorio, nombreArchivo);
+        
+        // Propiedad para almacenar el último error
+        public string UltimoError { get; private set; }
 
         public PDFDecorador(IDescargar descargador, string directorio = "descargas") : base(descargador)
         {
             this.directorio = directorio;
             this.nombreArchivo = $"Historial_{DateTime.Now:yyyyMMddHHmmss}.pdf";
             
-            // Asegurar que el directorio exista
-            if (!string.IsNullOrEmpty(directorio) && !Directory.Exists(directorio))
+            try
             {
-                Directory.CreateDirectory(directorio);
+                // Asegurar que el directorio exista
+                if (!string.IsNullOrEmpty(directorio) && !Directory.Exists(directorio))
+                {
+                    Directory.CreateDirectory(directorio);
+                }
+            }
+            catch (Exception ex)
+            {
+                UltimoError = $"Error al crear el directorio '{directorio}': {ex.Message}";
+                throw new Exception(UltimoError, ex);
             }
         }
 
         public override void Descargar(string historial)
         {
-            // Primero ejecutamos la funcionalidad del componente decorado
-            base.Descargar(historial);
+            try
+            {
+                // Primero ejecutamos la funcionalidad del componente decorado
+                base.Descargar(historial);
+            }
+            catch (Exception ex)
+            {
+                UltimoError = $"Error en el decorador base al descargar: {ex.Message}";
+                throw new Exception(UltimoError, ex);
+            }
             
             // Luego añadimos nuestra funcionalidad de exportación a PDF directamente aquí
             if (string.IsNullOrEmpty(historial))
+            {
+                UltimoError = "Error: No se puede exportar a PDF un historial vacío o nulo";
                 return;
+            }
                 
             try 
             {
@@ -42,14 +64,12 @@ namespace SistemaIntegrado.Funcionalidad.Actualizar.Decorator
                 
                 // Simulamos la escritura del archivo sin usar Console.WriteLine
                 File.WriteAllText(rutaCompleta, $"PDF simulado - {historial}");
-                
-                // Podríamos retornar el nombre del archivo generado o alguna información
-                // de estado de la exportación para que sea utilizada por quien llame a este método
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Manejo silencioso de excepciones o lanzamiento a un nivel superior
-                // según la política de manejo de errores de la aplicación
+                // Manejo de cualquier otra excepción no prevista
+                UltimoError = $"Error inesperado al generar el archivo PDF: {ex.Message}";
+                throw new Exception(UltimoError, ex);
             }
         }
     }

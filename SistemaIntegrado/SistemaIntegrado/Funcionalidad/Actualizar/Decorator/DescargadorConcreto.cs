@@ -6,25 +6,29 @@ namespace SistemaIntegrado.Funcionalidad.Actualizar.Decorator
 {
     public class DescargadorConcreto : IDescargar
     {
+        // Propiedad para almacenar el último mensaje de error
+        public string UltimoError { get; private set; }
+
         public void Descargar(string historial)
         {
             if (string.IsNullOrEmpty(historial))
+            {
+                UltimoError = "Error: El historial está vacío o es nulo";
                 return;
+            }
 
             try
             {
                 // Aquí implementamos la descarga básica del historial
-                // No usamos Console.WriteLine siguiendo instrucciones previas
-                // Podríamos guardar en un archivo o hacer otra operación según requisitos
-                
-                // Ejemplo: guardar en un archivo temporal
                 string tempPath = Path.GetTempPath();
                 string filePath = Path.Combine(tempPath, $"Historial_{DateTime.Now:yyyyMMddHHmmss}.txt");
                 File.WriteAllText(filePath, historial);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Manejo silencioso de excepciones
+                // Manejo de cualquier excepción
+                UltimoError = $"Error inesperado al descargar el historial: {ex.Message}";
+                throw new Exception(UltimoError, ex);
             }
         }
     }
