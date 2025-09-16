@@ -29,7 +29,7 @@ namespace SistemaIntegrado.Clases
         }
 
       
-        public Ciudadano(string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, Historia_Clinica historia_clinica, float latitud, float longitud)
+        public Ciudadano(string nombre, string correo, long celular, string tipo_cedula, int cedula, string contrasena, Historia_Clinica historia_clinica, float latitud, float longitud)
             : base(nombre, correo, celular, tipo_cedula, cedula, contrasena)
         {
             this.historia_clinica = historia_clinica;

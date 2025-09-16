@@ -36,7 +36,7 @@ namespace SistemaIntegrado.Clases
 
         // Constructor simplificado para el ejemplo
         public Paramedico(string nombre, string cedula, int edad, string unidad)
-            : base(nombre, "paramedico@ejemplo.com", 0, "CC", int.Parse(cedula), "password")
+            : base(nombre, "paramedico@ejemplo.com", 0L, "CC", int.Parse(cedula), "password") // Cambiado a 0L (long)
         {
             this.numParamedico = 1;
             this.limiteAlertas = 5;
@@ -45,7 +45,7 @@ namespace SistemaIntegrado.Clases
         }
 
         // Constructor completo original
-        public Paramedico(uint id, string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, int numParamedico, int limiteAlertas, List<Alerta>? alertasAsignadas = null)
+        public Paramedico(uint id, string nombre, string correo, long celular, string tipo_cedula, int cedula, string contrasena, int numParamedico, int limiteAlertas, List<Alerta>? alertasAsignadas = null)
             : base(nombre, correo, celular, tipo_cedula, cedula, contrasena)
         {
             this.numParamedico = numParamedico;

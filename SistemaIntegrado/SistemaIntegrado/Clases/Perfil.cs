@@ -7,7 +7,7 @@ namespace SistemaIntegrado.Clases
      
         private string nombre;
         private string correo;
-        private int celular;
+        private long celular; // Cambiado de int a long para soportar números de teléfono de 10 dígitos
         private string tipo_cedula;
         private int cedula;
         private string contrasena;
@@ -23,7 +23,7 @@ namespace SistemaIntegrado.Clases
             get => string.IsNullOrWhiteSpace(correo) ? "Sin correo" : correo;
             set => correo = value;
         }
-        public int Celular
+        public long Celular // Cambiado de int a long
         {
             get => celular;
             set => celular = value;
@@ -44,7 +44,7 @@ namespace SistemaIntegrado.Clases
             set => contrasena = value;
         }
 
-        public Perfil(string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena)
+        public Perfil(string nombre, string correo, long celular, string tipo_cedula, int cedula, string contrasena) // Cambiado de int a long
         {
             
             this.nombre = nombre;

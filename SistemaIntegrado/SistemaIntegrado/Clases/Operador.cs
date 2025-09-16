@@ -18,7 +18,7 @@ namespace SistemaIntegrado.Clases
             set => l_alertasEmergencia = value;
         }
 
-        public Operador(string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, int num_operador, List<Alerta> l_alertasEmergencia)
+        public Operador(string nombre, string correo, long celular, string tipo_cedula, int cedula, string contrasena, int num_operador, List<Alerta> l_alertasEmergencia = null)
             : base(nombre, correo, celular, tipo_cedula, cedula, contrasena)
         {
             this.num_operador = num_operador;

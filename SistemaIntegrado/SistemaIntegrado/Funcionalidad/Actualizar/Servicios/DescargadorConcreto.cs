@@ -4,9 +4,6 @@ using SistemaIntegradoAlertas.Funcionalidad.Actualizar.Decorator;
 
 namespace SistemaIntegrado.Funcionalidad.Actualizar.Servicios
 {
-    /// <summary>
-    /// Implementación concreta del componente descargador
-    /// </summary>
     public class DescargadorConcreto : IDescargar
     {
         private readonly string directorio;

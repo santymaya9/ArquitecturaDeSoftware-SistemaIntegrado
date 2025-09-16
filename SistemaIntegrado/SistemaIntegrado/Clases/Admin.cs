@@ -20,7 +20,7 @@ namespace SistemaIntegrado.Clases
             set => num_admin = value;
         }
 
-        public Admin(string nombre, string correo, int celular, string tipo_cedula, int cedula, string contrasena, int num_admin, List<Alerta> l_alertas = null)
+        public Admin(string nombre, string correo, long celular, string tipo_cedula, int cedula, string contrasena, int num_admin, List<Alerta> l_alertas = null)
             : base(nombre, correo, celular, tipo_cedula, cedula, contrasena)
         {
             this.num_admin = num_admin;
