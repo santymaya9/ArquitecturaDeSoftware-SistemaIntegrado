@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using SistemaIntegrado.Clases;
-using SistemaIntegrado.Funcionalidad.Actualizar.Observer;
+using SistemaIntegrado.Funcionalidad.Actualizar.Decorator;
+using SistemaIntegradoAlertas.Funcionalidad.Actualizar.Decorator;
 
 namespace SistemaIntegrado.Main
 {
@@ -10,118 +13,176 @@ namespace SistemaIntegrado.Main
         public static void Main(string[] args)
         {
             Console.WriteLine("===== SISTEMA INTEGRADO DE ALERTAS MÉDICAS =====");
-            Console.WriteLine("Demostración del Patrón Observer Simplificado\n");
+            Console.WriteLine("Demostración del Patrón Decorator para Descargas de Historiales Médicos\n");
             
-            Console.WriteLine("=== DEMOSTRACIÓN DEL PATRÓN OBSERVER ===\n");
-
-            // 1. Crear el publisher (sujeto) para mensajes de texto
-            var mensajePublisher = new Publisher<string>();
+            // Crear directorios para las diferentes versiones de descarga
+            string directorioBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SistemaIntegrado");
+            string directorioPDF = Path.Combine(directorioBase, "PDFs");
+            string directorioExcel = Path.Combine(directorioBase, "Excel");
             
-            Console.WriteLine("Publisher para mensajes creado.\n");
-
-            // 2. Crear observadores
-            var paramedicoObserver = new ParamedicoObserver();
-            var operadorObserver = new OperadorObserver();
+            // Crear los directorios si no existen
+            Directory.CreateDirectory(directorioBase);
+            Directory.CreateDirectory(directorioPDF);
+            Directory.CreateDirectory(directorioExcel);
             
-            Console.WriteLine("Observadores creados: ParamedicoObserver, OperadorObserver\n");
-
-            // 3. Suscribir los observadores al publisher
-            Console.WriteLine("Suscribiendo observadores al publisher...");
-            mensajePublisher.Subscribe(paramedicoObserver);
-            mensajePublisher.Subscribe(operadorObserver);
-            Console.WriteLine("Observadores suscritos con éxito.\n");
-
-            // 4. Enviar una notificación (mensaje normal)
-            Console.WriteLine("ENVIANDO MENSAJE NORMAL:");
-            string mensajeNormal = "Reunión de personal programada para mañana a las 9:00 AM";
-            List<string> resultados = mensajePublisher.Notify(mensajeNormal);
+            Console.WriteLine("Directorios de descarga:");
+            Console.WriteLine($" - Base: {directorioBase}");
+            Console.WriteLine($" - PDFs: {directorioPDF}");
+            Console.WriteLine($" - Excel: {directorioExcel}");
             
-            // Mostrar los resultados de los observadores
-            Console.WriteLine("\nRESULTADOS DE LA NOTIFICACIÓN:");
-            foreach (var resultado in resultados)
+            // Crear un ciudadano de ejemplo con su historia clínica
+            List<string> enfermedadesPreexistentes = new List<string> 
             {
-                Console.WriteLine($"  - {resultado}");
-            }
+                "Hipertensión arterial", 
+                "Diabetes tipo 2",
+                "Asma"
+            };
             
-            // 5. Enviar una notificación de emergencia
-            Console.WriteLine("\nENVIANDO MENSAJE DE EMERGENCIA:");
-            string mensajeUrgente = "URGENTE: Se requiere asistencia inmediata en accidente de tráfico";
-            resultados = mensajePublisher.Notify(mensajeUrgente);
-            
-            // Mostrar los resultados
-            Console.WriteLine("\nRESULTADOS DE LA NOTIFICACIÓN DE EMERGENCIA:");
-            foreach (var resultado in resultados)
-            {
-                Console.WriteLine($"  - {resultado}");
-            }
-
-            // 6. Demostrar desuscripción
-            Console.WriteLine("\nDesuscribiendo al paramédico del publisher...");
-            mensajePublisher.Unsubscribe(paramedicoObserver);
-            Console.WriteLine("Paramédico desuscrito.\n");
-
-            // 7. Enviar otra notificación después de desuscribir
-            Console.WriteLine("ENVIANDO MENSAJE DESPUÉS DE DESUSCRIBIR:");
-            string otroMensaje = "Actualización de inventario completada";
-            resultados = mensajePublisher.Notify(otroMensaje);
-            
-            // Mostrar resultados (ahora solo del operador)
-            Console.WriteLine("\nRESULTADOS DE LA NOTIFICACIÓN (SOLO OPERADOR):");
-            foreach (var resultado in resultados)
-            {
-                Console.WriteLine($"  - {resultado}");
-            }
-
-            // 8. DEMO CON ALERTA (utilizando PacienteObserver)
-            Console.WriteLine("\n=== DEMOSTRACIÓN CON ALERTAS MÉDICAS ===\n");
-            
-            // Crear un publisher para alertas
-            var alertaPublisher = new Publisher<Alerta>();
-            
-            // Crear un observador de paciente
-            var pacienteObserver = new PacienteObserver();
-            
-            // Suscribir al observer
-            alertaPublisher.Subscribe(pacienteObserver);
-            
-            // Crear perfiles para la demostración
-            var medico = new PerfilDemo("Dr. García", "garcia@hospital.com", 300123456, "CC", 12345678, "clave123");
-            var paciente = new PerfilDemo("Juan Pérez", "juan@email.com", 301234567, "CC", 23456789, "clave456");
-            
-            // Crear una alerta de ejemplo
-            var alerta = new Alerta(
-                reportante: paciente,
-                fecha_creacion: DateTime.Now,
-                tipoAlerta: "Consulta médica"
+            var historiaClinica = new Historia_Clinica(
+                tipo_sangre: "O+", 
+                edad: 45, 
+                marcapasos: false, 
+                municipio: "Medellín", 
+                l_enfermedades_preexistentes: enfermedadesPreexistentes
             );
-            // Establecer nivel de triaje y equipo asignado
-            alerta.Nivel_triaje = 3;
-            alerta.Estado = true;
-            alerta.Equipo_asignado = medico; // El médico como encargado de la alerta
             
-            // Notificar la alerta
-            Console.WriteLine("ENVIANDO ALERTA MÉDICA:");
-            resultados = alertaPublisher.Notify(alerta);
+            var ciudadano = new Ciudadano(
+                nombre: "Juan Pérez",
+                correo: "juan.perez@ejemplo.com",
+                celular: 301234567,
+                tipo_cedula: "CC",
+                cedula: 12345678,
+                contrasena: "clave123",
+                historia_clinica: historiaClinica,
+                latitud: 6.2476f,
+                longitud: -75.5658f
+            );
             
-            // Mostrar resultados
-            Console.WriteLine("\nRESULTADOS DE LA NOTIFICACIÓN DE ALERTA:");
-            foreach (var resultado in resultados)
-            {
-                Console.WriteLine($"  - {resultado}");
-            }
+            // Convertir la historia clínica a un formato textual para ser descargado
+            string historialMedico = FormatearHistorialMedico(ciudadano);
+            
+            Console.WriteLine("\nCiudadano creado con su historial médico:");
+            Console.WriteLine($"Nombre: {ciudadano.Nombre}");
+            Console.WriteLine($"Tipo de sangre: {ciudadano.Historia_clinica.TipoSangre}");
+            Console.WriteLine($"Municipio: {ciudadano.Historia_clinica.Municipio}");
+            
+            // DEMOSTRACIÓN DEL PATRÓN DECORATOR
+            Console.WriteLine("\n=== DEMOSTRACIÓN DEL PATRÓN DECORATOR ACTUALIZADO ===");
+            
+            // 1. Componente concreto base
+            var descargadorBase = new DescargadorConcreto();
+            Console.WriteLine("\n1. Usando componente concreto base:");
+            descargadorBase.Descargar(historialMedico);
+            Console.WriteLine("   Descarga básica completada.");
+            
+            // 2. Uso del decorador PDF con las propiedades accesoras
+            var pdfDecorator = new PDFDecorador(descargadorBase, directorioPDF);
+            Console.WriteLine("\n2. Usando decorador PDF:");
+            Console.WriteLine($"   Directorio: {pdfDecorator.Directorio}");
+            Console.WriteLine($"   Nombre archivo: {pdfDecorator.NombreArchivo}");
+            Console.WriteLine($"   Ruta completa: {pdfDecorator.RutaCompleta}");
+            pdfDecorator.Descargar(historialMedico);
+            Console.WriteLine("   Descarga con PDF completada.");
+            
+            // 3. Uso del decorador Excel con las propiedades accesoras
+            var excelDecorator = new ExcelDecorador(descargadorBase, directorioExcel);
+            Console.WriteLine("\n3. Usando decorador Excel:");
+            Console.WriteLine($"   Directorio: {excelDecorator.Directorio}");
+            Console.WriteLine($"   Nombre archivo: {excelDecorator.NombreArchivo}");
+            Console.WriteLine($"   Ruta completa: {excelDecorator.RutaCompleta}");
+            excelDecorator.Descargar(historialMedico);
+            Console.WriteLine("   Descarga con Excel completada.");
+            
+            // 4. Uso combinado de decoradores (apilados)
+            Console.WriteLine("\n4. Usando decoradores apilados (PDF dentro de Excel):");
+            var combinado = new ExcelDecorador(
+                new PDFDecorador(descargadorBase, directorioPDF),
+                directorioExcel
+            );
+            
+            combinado.Descargar(historialMedico);
+            Console.WriteLine("   Descarga combinada completada (ambos formatos generados).");
+            
+            // 5. Demostración de inyección de dependencias con HistorialAdmin
+            Console.WriteLine("\n5. Demostración de inyección de dependencias:");
+            var historialAdmin = new Funcionalidad.Actualizar.Inyecciones.HistorialAdmin(excelDecorator);
+            Console.WriteLine($"   Se inyectó el decorador Excel en HistorialAdmin");
+            Console.WriteLine($"   Accediendo a través de la propiedad Descargas:");
+            historialAdmin.Descargas.Descargar(historialMedico);
+            Console.WriteLine("   Descarga completada a través de HistorialAdmin.");
+            
+            // Mostrar información sobre los archivos generados
+            Console.WriteLine("\nARCHIVOS GENERADOS:");
+            MostrarArchivosEnDirectorio(directorioBase, "Base");
+            MostrarArchivosEnDirectorio(directorioPDF, "PDFs");
+            MostrarArchivosEnDirectorio(directorioExcel, "Excel");
 
             Console.WriteLine("\n=== FIN DE LA DEMOSTRACIÓN ===");
             Console.WriteLine("\nPresione cualquier tecla para salir...");
             Console.ReadKey();
         }
-    }
-    
-    // Clase simple de perfil para la demo
-    public class PerfilDemo : Perfil
-    {
-        public PerfilDemo(string nombre, string correo, int celular, string tipoCedula, int cedula, string contrasena) 
-            : base(nombre, correo, celular, tipoCedula, cedula, contrasena)
+        
+        private static void MostrarArchivosEnDirectorio(string directorio, string tipo)
         {
+            Console.WriteLine($"\nArchivos en directorio de {tipo}:");
+            if (!Directory.Exists(directorio))
+            {
+                Console.WriteLine("  No se encontró el directorio.");
+                return;
+            }
+            
+            var archivos = Directory.GetFiles(directorio);
+            if (archivos.Length == 0)
+            {
+                Console.WriteLine("  No hay archivos en el directorio.");
+                return;
+            }
+            
+            foreach (var archivo in archivos)
+            {
+                var info = new FileInfo(archivo);
+                Console.WriteLine($"  - {info.Name} ({info.Length} bytes)");
+            }
+        }
+        
+        private static string FormatearHistorialMedico(Ciudadano ciudadano)
+        {
+            var sb = new StringBuilder();
+            var historia = ciudadano.Historia_clinica;
+            
+            sb.AppendLine($"HISTORIAL MÉDICO DE {ciudadano.Nombre.ToUpper()}");
+            sb.AppendLine($"Documento: {ciudadano.TipoCedula} {ciudadano.Cedula}");
+            sb.AppendLine($"Fecha: {DateTime.Now:yyyy-MM-dd}");
+            sb.AppendLine(new string('-', 40));
+            
+            sb.AppendLine("DATOS PERSONALES:");
+            sb.AppendLine($"Edad: {historia.Edad} años");
+            sb.AppendLine($"Municipio: {historia.Municipio}");
+            sb.AppendLine($"Contacto: {ciudadano.Celular} / {ciudadano.Correo}");
+            sb.AppendLine($"Ubicación actual: [{ciudadano.Latitud}, {ciudadano.Longitud}]");
+            sb.AppendLine(new string('-', 40));
+            
+            sb.AppendLine("INFORMACIÓN MÉDICA:");
+            sb.AppendLine($"Tipo de sangre: {historia.TipoSangre}");
+            sb.AppendLine($"Marcapasos: {(historia.Marcapasos ? "Sí" : "No")}");
+            
+            sb.AppendLine("\nENFERMEDADES PREEXISTENTES:");
+            if (historia.EnfermedadesPreexistentes != null && historia.EnfermedadesPreexistentes.Count > 0)
+            {
+                foreach (var enfermedad in historia.EnfermedadesPreexistentes)
+                {
+                    sb.AppendLine($"  - {enfermedad}");
+                }
+            }
+            else
+            {
+                sb.AppendLine("  No se registran enfermedades preexistentes");
+            }
+            
+            sb.AppendLine(new string('-', 40));
+            sb.AppendLine("Este documento es confidencial y está sujeto a normativas de protección de datos de salud.");
+            
+            return sb.ToString();
         }
     }
 }
