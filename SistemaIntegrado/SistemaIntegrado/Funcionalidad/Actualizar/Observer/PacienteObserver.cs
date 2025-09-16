@@ -3,16 +3,8 @@ using SistemaIntegrado.Clases;
 
 namespace SistemaIntegrado.Funcionalidad.Actualizar.Observer
 {
-    /// <summary>
-    /// Observador para pacientes que recibe notificaciones de alertas médicas
-    /// </summary>
     public class PacienteObserver : IObserver<Alerta>
     {
-        /// <summary>
-        /// Actualiza al observador con una alerta recibida
-        /// </summary>
-        /// <param name="elemento">La alerta médica recibida</param>
-        /// <returns>Un mensaje descriptivo de la acción realizada</returns>
         public string Update(Alerta elemento)
         {
             // Manejar caso de alerta nula
