@@ -21,6 +21,7 @@ using SistemaIntegrado.Funcionalidad.Mostrar.Inyecciones;
 using SistemaIntegrado.Funcionalidad.Login.Interfaces;
 using SistemaIntegrado.Funcionalidad.Login.Servicios;
 using SistemaIntegrado.Funcionalidad.Login.Inyecciones;
+using SistemaIntegradoAlertas.Clases.Singleton;
 
 namespace SistemaIntegrado.Main
 {
@@ -62,7 +63,7 @@ namespace SistemaIntegrado.Main
                 Console.WriteLine("2. Patrón Chain of Responsibility - Sistema de autenticación");
                 Console.WriteLine("3. Patrón Decorator - Sistema de comunicaciones");
                 Console.WriteLine("4. Patrón Decorator - Visualización de información");
-                Console.WriteLine("5. Patrón Decorator - Exportación de documentos");
+                Console.WriteLine("5. Patrón Singleton - Gestión centralizada del sistema");
                 Console.WriteLine("6. Patrón Observer - Notificaciones de alertas");
                 Console.WriteLine("7. Simulación completa de emergencia médica");
                 Console.WriteLine("8. Salir\n");
@@ -85,7 +86,7 @@ namespace SistemaIntegrado.Main
                         DemostrarPatronDecoratorVisualizacion(usuarios);
                         break;
                     case "5":
-                        DemostrarPatronDecoratorExportacion(usuarios, directorioPDF, directorioExcel);
+                        DemostrarPatronSingleton(usuarios);
                         break;
                     case "6":
                         DemostrarPatronObserver(usuarios);
@@ -488,55 +489,124 @@ namespace SistemaIntegrado.Main
             Console.ReadKey();
         }
         
-        private static void DemostrarPatronDecoratorExportacion(Dictionary<string, Perfil> usuarios, string directorioPDF, string directorioExcel)
+        private static void DemostrarPatronSingleton(Dictionary<string, Perfil> usuarios)
         {
             Console.Clear();
             Console.WriteLine("======================================================================");
-            Console.WriteLine("||             PATRÓN DECORATOR - EXPORTACIÓN                       ||");
-            Console.WriteLine("||       Sistema de exportación de datos en múltiples formatos      ||");
+            Console.WriteLine("||                      PATRÓN SINGLETON                            ||");
+            Console.WriteLine("||         Gestión centralizada del sistema de alertas médicas      ||");
             Console.WriteLine("======================================================================\n");
             
-            // Crear datos para exportar
-            var paciente = (Ciudadano)usuarios["paciente"];
-            string historialMedico = FormatearHistorialMedico(paciente);
+            Console.WriteLine("El patrón Singleton garantiza que una clase tenga solo una instancia");
+            Console.WriteLine("y proporciona un punto de acceso global a dicha instancia. En este");
+            Console.WriteLine("sistema, se utiliza para gestionar de forma centralizada la información");
+            Console.WriteLine("de cuentas de usuario y centros médicos.\n");
             
-            // 1. Componente base de descarga
-            Console.WriteLine("1. DESCARGA BÁSICA (COMPONENTE BASE):");
-            var descargadorBase = new DescargadorConcreto();
-            descargadorBase.Descargar(historialMedico);
-            Console.WriteLine("  ? Descarga básica realizada (simulación en memoria)\n");
+            // 1. Demostrar la creación de la primera instancia
+            Console.WriteLine("1. PRIMERA OBTENCIÓN DE LA INSTANCIA SINGLETON:");
+            var sistemaInstancia1 = SistemaIntegradoAlertas.Clases.Singleton.SistemaIntegrado.GetInstance();
+            Console.WriteLine("  ? Primera llamada a GetInstance()");
+            Console.WriteLine($"  ? Instancia creada: {sistemaInstancia1.GetHashCode()}");
+            Console.WriteLine($"  ? Nombre del sistema: {sistemaInstancia1.Nombre}");
+            Console.WriteLine($"  ? Teléfono: {sistemaInstancia1.Telefono}");
+            Console.WriteLine($"  ? Número de cuentas registradas: {sistemaInstancia1.L_cuentas.Count}");
+            Console.WriteLine($"  ? Número de centros médicos: {sistemaInstancia1.L_centroMedico.Count}\n");
             
-            // 2. Exportación a PDF
-            Console.WriteLine("2. EXPORTACIÓN A PDF (DECORADOR):");
-            var pdfDecorator = new PDFDecorador(descargadorBase, directorioPDF);
-            pdfDecorator.Descargar(historialMedico);
-            Console.WriteLine($"  ? Archivo PDF generado: {pdfDecorator.RutaCompleta}\n");
+            // 2. Demostrar que la segunda llamada devuelve la misma instancia
+            Console.WriteLine("2. SEGUNDA OBTENCIÓN DE LA INSTANCIA SINGLETON:");
+            var sistemaInstancia2 = SistemaIntegradoAlertas.Clases.Singleton.SistemaIntegrado.GetInstance();
+            Console.WriteLine("  ? Segunda llamada a GetInstance()");
+            Console.WriteLine($"  ? Instancia obtenida: {sistemaInstancia2.GetHashCode()}");
+            Console.WriteLine($"  ? ¿Es la misma instancia? {(sistemaInstancia1 == sistemaInstancia2 ? "SÍ" : "NO")}");
+            Console.WriteLine($"  ? ¿Mismo HashCode? {(sistemaInstancia1.GetHashCode() == sistemaInstancia2.GetHashCode() ? "SÍ" : "NO")}\n");
             
-            // 3. Exportación a Excel
-            Console.WriteLine("3. EXPORTACIÓN A EXCEL (DECORADOR):");
-            var excelDecorator = new ExcelDecorador(descargadorBase, directorioExcel);
-            excelDecorator.Descargar(historialMedico);
-            Console.WriteLine($"  ? Archivo Excel generado: {excelDecorator.RutaCompleta}\n");
+            // 3. Configurar el sistema con datos iniciales
+            Console.WriteLine("3. CONFIGURACIÓN INICIAL DEL SISTEMA:");
+            sistemaInstancia1.Nombre = "Sistema Integrado de Alertas Médicas (SIAM)";
+            sistemaInstancia1.Telefono = 123456789;
             
-            // 4. Exportación en múltiples formatos (combinación de decoradores)
-            Console.WriteLine("4. EXPORTACIÓN EN MÚLTIPLES FORMATOS (DECORADORES ANIDADOS):");
-            var multiFormatoDecorator = new ExcelDecorador(
-                                          new PDFDecorador(descargadorBase, directorioPDF),
-                                          directorioExcel);
-            multiFormatoDecorator.Descargar(historialMedico);
-            Console.WriteLine("  ? Datos exportados simultáneamente en PDF y Excel\n");
+            // Crear cuentas de usuario basadas en los perfiles existentes
+            foreach (var usuario in usuarios)
+            {
+                var cuenta = new Cuenta(usuario.Value.GetType().Name, DateTime.Now);
+                sistemaInstancia1.L_cuentas.Add(cuenta);
+            }
             
-            // 5. Inyección de dependencia para descarga
-            Console.WriteLine("5. INYECCIÓN DE DEPENDENCIA PARA EXPORTACIÓN:");
-            var historialAdmin = new HistorialAdmin(pdfDecorator);
-            historialAdmin.Descargas.Descargar(historialMedico);
-            Console.WriteLine("  ? Datos exportados a través del servicio inyectado\n");
+            Console.WriteLine("  ? Nombre actualizado del sistema");
+            Console.WriteLine("  ? Teléfono de contacto configurado");
+            Console.WriteLine($"  ? {sistemaInstancia1.L_cuentas.Count} cuentas de usuario registradas");
+            Console.WriteLine();
             
-            Console.WriteLine("Beneficios del patrón Decorator en la exportación de documentos:");
-            Console.WriteLine(" - Permite añadir funcionalidades de exportación sin modificar el código existente");
-            Console.WriteLine(" - Facilita la combinación de diferentes formatos de exportación");
-            Console.WriteLine(" - Permite extender el sistema con nuevos formatos de archivo");
-            Console.WriteLine(" - Simplifica la configuración de opciones específicas para cada formato");
+            // 4. Agregar centros médicos al sistema
+            Console.WriteLine("4. REGISTRO DE CENTROS MÉDICOS EN EL SISTEMA:");
+            var centrosMedicos = new List<CentroMedico>
+            {
+                new CentroMedico("Hospital General de Medellín", 6.2518f, -75.5636f, "Alta", 123456789),
+                new CentroMedico("Clínica Las Américas", 6.2442f, -75.5812f, "Alta", 234567890),
+                new CentroMedico("Hospital San Vicente", 6.2463f, -75.5748f, "Muy Alta", 345678901),
+                new CentroMedico("Centro de Salud Belén", 6.2308f, -75.5906f, "Media", 456789012),
+                new CentroMedico("Hospital El Salvador", 6.2285f, -75.5761f, "Alta", 567890123)
+            };
+            
+            foreach (var centro in centrosMedicos)
+            {
+                sistemaInstancia1.L_centroMedico.Add(centro);
+            }
+            
+            Console.WriteLine($"  ? {centrosMedicos.Count} centros médicos registrados en el sistema");
+            Console.WriteLine("  ? Cobertura geográfica establecida para Medellín y área metropolitana\n");
+            
+            // 5. Verificar que los cambios se reflejan en cualquier referencia
+            Console.WriteLine("5. VERIFICACIÓN DE COHERENCIA DE DATOS:");
+            var sistemaInstancia3 = SistemaIntegradoAlertas.Clases.Singleton.SistemaIntegrado.GetInstance();
+            Console.WriteLine("  ? Tercera obtención de la instancia Singleton");
+            Console.WriteLine($"  ? Nombre: {sistemaInstancia3.Nombre}");
+            Console.WriteLine($"  ? Teléfono: {sistemaInstancia3.Telefono}");
+            Console.WriteLine($"  ? Cuentas registradas: {sistemaInstancia3.L_cuentas.Count}");
+            Console.WriteLine($"  ? Centros médicos: {sistemaInstancia3.L_centroMedico.Count}");
+            Console.WriteLine("  ? Todos los datos son consistentes entre referencias\n");
+            
+            // 6. Mostrar información detallada del sistema
+            Console.WriteLine("6. INFORMACIÓN DETALLADA DEL SISTEMA SINGLETON:");
+            Console.WriteLine($"SISTEMA: {sistemaInstancia1.Nombre}");
+            Console.WriteLine($"CONTACTO: {sistemaInstancia1.Telefono}");
+            Console.WriteLine();
+            
+            Console.WriteLine("CUENTAS DE USUARIO REGISTRADAS:");
+            for (int i = 0; i < sistemaInstancia1.L_cuentas.Count; i++)
+            {
+                var cuenta = sistemaInstancia1.L_cuentas[i];
+                Console.WriteLine($"  {i + 1}. Tipo: {cuenta.Perfil}");
+                Console.WriteLine($"     Fecha creación: {cuenta.FechaCreacion:yyyy-MM-dd HH:mm:ss}");
+                Console.WriteLine($"     Estado: {(cuenta.EstadoActivo ? "Activo" : "Inactivo")}");
+            }
+            Console.WriteLine();
+            
+            Console.WriteLine("CENTROS MÉDICOS DISPONIBLES:");
+            for (int i = 0; i < sistemaInstancia1.L_centroMedico.Count; i++)
+            {
+                var centro = sistemaInstancia1.L_centroMedico[i];
+                Console.WriteLine($"  {i + 1}. {centro.Nombre}");
+                Console.WriteLine($"     Ubicación: [{centro.Latitud}, {centro.Longitud}]");
+                Console.WriteLine($"     Complejidad: {centro.Complejidad}");
+                Console.WriteLine($"     Teléfono: {centro.Telefono}");
+            }
+            Console.WriteLine();
+            
+            // 7. Demostrar operaciones centralizadas
+            Console.WriteLine("7. OPERACIONES CENTRALIZADAS DEL SISTEMA:");
+            Console.WriteLine("  ? Gestión unificada de cuentas de usuario");
+            Console.WriteLine("  ? Registro centralizado de centros médicos");
+            Console.WriteLine("  ? Punto único de acceso a la configuración del sistema");
+            Console.WriteLine("  ? Garantía de consistencia de datos en toda la aplicación");
+            Console.WriteLine("  ? Optimización de memoria (una sola instancia global)\n");
+            
+            Console.WriteLine("Beneficios del patrón Singleton en el sistema:");
+            Console.WriteLine(" - Garantiza una única instancia del sistema central");
+            Console.WriteLine(" - Proporciona acceso global controlado a la configuración");
+            Console.WriteLine(" - Mantiene la coherencia de datos entre todos los componentes");
+            Console.WriteLine(" - Centraliza la gestión de recursos críticos del sistema");
+            Console.WriteLine(" - Optimiza el uso de memoria evitando instancias duplicadas");
             
             Console.WriteLine("\nPresione cualquier tecla para volver al menú principal...");
             Console.ReadKey();
@@ -641,7 +711,13 @@ namespace SistemaIntegrado.Main
             alerta.Estado = true;
             Console.WriteLine("  ? Sistema crea instancia de Alerta (Patrón Factory)");
             Console.WriteLine("  ? Sistema registra geolocalización del paciente");
-            Console.WriteLine($"  ? Coordenadas: [{paciente.Latitud}, {paciente.Longitud}]\n");
+            Console.WriteLine($"  ? Coordenadas: [{paciente.Latitud}, {paciente.Longitud}]");
+            
+            // Usar Singleton para acceder al sistema central
+            Console.WriteLine("  ? Sistema accede a instancia Singleton para validar datos");
+            var sistemaGlobal = SistemaIntegradoAlertas.Clases.Singleton.SistemaIntegrado.GetInstance();
+            Console.WriteLine($"  ? Centros médicos disponibles: {sistemaGlobal.L_centroMedico.Count}");
+            Console.WriteLine();
             
             // Notificación mediante Observer
             Console.WriteLine("1.2 Sistema notifica a los actores relevantes (Patrón Observer)");
@@ -739,15 +815,12 @@ namespace SistemaIntegrado.Main
             string reporteAtencion = GenerarReporteFinal(alerta, paciente, paramedico);
             Console.WriteLine("  ? Reporte generado con todos los detalles de la emergencia\n");
             
-            // Exportación del reporte usando Decorator
-            Console.WriteLine("4.2 Sistema exporta el reporte en múltiples formatos (Patrón Decorator)");
-            var pdfDecorator = new PDFDecorador(new DescargadorConcreto(), directorioPDF);
-            pdfDecorator.Descargar(reporteAtencion);
-            Console.WriteLine($"  ? Reporte exportado en PDF: {pdfDecorator.RutaCompleta}");
-            
-            var excelDecorator = new ExcelDecorador(new DescargadorConcreto(), directorioExcel);
-            excelDecorator.Descargar(reporteAtencion);
-            Console.WriteLine($"  ? Reporte exportado en Excel: {excelDecorator.RutaCompleta}\n");
+            // Usar Singleton para actualizar estadísticas del sistema
+            Console.WriteLine("4.2 Sistema actualiza estadísticas centralizadas (Patrón Singleton)");
+            Console.WriteLine($"  ? Sistema: {sistemaGlobal.Nombre}");
+            Console.WriteLine($"  ? Cuentas activas: {sistemaGlobal.L_cuentas.Count}");
+            Console.WriteLine($"  ? Centros médicos en red: {sistemaGlobal.L_centroMedico.Count}");
+            Console.WriteLine("  ? Estadísticas de emergencia actualizadas en instancia global\n");
             
             // Notificación de finalización
             Console.WriteLine("4.3 Sistema notifica la finalización de la emergencia");
@@ -764,7 +837,8 @@ namespace SistemaIntegrado.Main
             Console.WriteLine(" - Factory: Creación de perfiles y objetos del sistema");
             Console.WriteLine(" - Chain of Responsibility: Autenticación y verificación de permisos");
             Console.WriteLine(" - Observer: Notificaciones a los diferentes actores del sistema");
-            Console.WriteLine(" - Decorator: Comunicaciones, visualización y exportación de datos");
+            Console.WriteLine(" - Decorator: Comunicaciones y visualización de información");
+            Console.WriteLine(" - Singleton: Gestión centralizada del sistema y acceso global a datos");
             Console.WriteLine(" - Inyección de Dependencias: Acoplamiento flexible entre componentes\n");
             
             Console.WriteLine("Presione cualquier tecla para volver al menú principal...");
